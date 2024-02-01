@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+    
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <div class="merk-lijst">
+        {% for merk in merken %}
+            <div class="merk-item">
+                <div class="img-placeholder">
+                    <img src="{{ url_for('static', filename=merk.logo) }}" alt="{{ merk.merknaam }} Car Brand Logo ©">
+                </div>
+                <p>{{ merk.merknaam }}</p>
+                <p>{{ merk.production }}</p>
+                <div class="merk-item-info">
+                    {% include "svg/" + merk.landvlag %}
+                    <span class="tooltip">Land van herkomst:<br>{{ merk.herkomst }}</span>
+                </div>
+                <div class="info-icon" data-merkinfo='{{merk|tojson}}'>
+                    {% include "svg/info_icon.svg" %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,192 @@
+.search-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#searchBar, #searchButton, .category-dropdown, #gridViewButton {
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+#searchBar {
+    flex-grow: 1;
+}
+
+#searchButton {
+    background-color: rgba(175, 174, 174, 0.135);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    float: right;
+    transition: box-shadow 0.3s ease, transform 0.15s ease;
+}
+
+#searchButton svg {
+    min-width: 25px;
+    height: auto;
+    vertical-align: middle;
+}
+
+#searchButton svg path {
+    fill: var(--col-01);
+}
+
+#searchButton:hover {
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+#searchButton:hover svg {
+    transform: scale(1.10);
+}
+
+#searchButton:active {
+    transform: scale(0.90);
+}
+
+.category-dropdown {
+    width: 280px;
+    min-width: 121px;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+.category-dropdown:hover {
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.category-dropdown.active {
+    border-radius: 5px 5px 0 0;
+}
+
+.dropdown-selected {
+    padding: 10px;
+    background-color: #fff;
+    position: relative;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border-radius 0.2s ease;
+}
+
+.dropdown-selected .highlight {
+    color: var(--col-01);
+    transition: color 0.3s ease;
+}
+
+.dropdown-selected::after {
+    content: '▼';
+    float: right;
+    margin-left: 10px;
+    color: var(--col-01);
+    transition: transform 0.3s ease;
+}
+
+.category-dropdown.active .dropdown-selected::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border-top: none;
+    z-index: 100;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-options .option {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #fff;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.dropdown-options .option:hover, .dropdown-options .option.selected {
+    background-color: var(--col-01);
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-options .option:focus {
+    outline: none;
+}
+
+.dropdown-options > button:last-child {
+    border-radius: 0px 0px 5px 5px;
+}
+
+#searchBar, #categorySelect, #searchButton, #gridViewButton {
+    height: 40px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+#categorySelect, #searchButton, #gridViewButton, .category-dropdown {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#gridViewButton {
+    background-color: rgba(175, 174, 174, 0.135);
+    width: 40px;
+    border: solid var(--col-01) 1.5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0;
+}
+
+#gridViewButton svg {
+    width: 25px;
+    height: auto;
+    transform: translateY(2px);
+}
+
+#gridViewButton svg path {
+    fill: var(--col-01);
+}
+
+#gridViewButton:hover svg path {
+    fill: var(--col-02);
+}
+
+@media (max-width: 768px) {
+    #categorySelect, #searchButton, #gridViewButton, .category-dropdown {
+        margin-left: 0;
+    }
+
+    .search-section {
+        flex-wrap: wrap;
+    }
+
+    #searchBar {
+        flex-grow: 1;
+    }
+
+    #searchButton {
+        flex-grow: 0;
+    }
+
+    .category-dropdown, #gridViewButton {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #gridViewButton {
+        margin-top: 10px;
+    }
+}
+

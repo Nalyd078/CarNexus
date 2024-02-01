@@ -1,0 +1,25 @@
+[
+    {
+        "merk": "Audi",
+        "logo": "urlnaarimage"
+    },
+
+    {
+        "merk": "Mercedes",
+        "logo": "urlnaarimage",
+        "uuid": "abc"
+    },
+
+    {
+        "merk": "Audi",
+        "logo": "urlnaarimage"
+    }
+]
+
+[
+    {
+        "uuid": "def",
+        "merk_uuid": "abc",
+        "model": "benz"
+    }
+]

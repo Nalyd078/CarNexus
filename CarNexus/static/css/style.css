@@ -1,0 +1,17 @@
+:root {
+    --col-01: #bd162c; /* Race Red */
+    --col-02: #dd1630; /* Transition Race Red to Ferrari Red */
+  }
+body {
+    background-image: url(../img/cf_background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Expressway', sans-serif;
+}
+
+@font-face {
+    font-family: 'Expressway';
+    src: url('/static/fonts/expressway.otf') format('espressway');
+    font-weight: normal;
+    font-style: normal;
+}
